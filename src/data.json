@@ -1,8 +1,8 @@
 {
-"lastname": "Bertrand",
-"firstname": "Marie",
-"function": "student",
-"email": "mary.btrd@gmail.com",
-"telephone": "+32 494 56 93 35",
-"url": "http://marie.bertrand.be",
+    "lastname": "Bertrand",
+    "firstname": "Marie",
+    "position": "Student",
+    "email": "marie.btrd@gmail.be",
+    "phone": "+32 (0) 493 56 93 35",
+    "url": "http://leny.me"
 }

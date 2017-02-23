@@ -4,8 +4,36 @@ html( lang="fr" )
   head
     meta(charset="utf-8" )/
     title Ma carte de visite
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1")
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="description" content="Exercice design web: Carte de visite")
+    meta(name="author" content="Eric Closquet")
+    meta(name="keywords" content="exercices, css, html")
     link( rel="stylesheet", href="assets/css/styles.css" )/
   body
-    h1 Ma carte de visite
+      main
+        section.face
+          h1
+            strong= lastname
+            = " "
+            span= firstname
+          p= position
 
-    script( src="assets/js/script.js")
+        section.back
+          h2= firstname + " " + lastname
+          dl
+            dt email
+            dd= email
+            dt téléphone
+            dd= phone
+            dt site web
+            dd=url
+        nav
+          a.flip( href="javascript:void(0);")
+              include ../../assets/images/flip-icon.svg
+              = " "
+              span retourner la carte
+
+        footer
+          small  2017
+          script( src="assets/js/script.js")
