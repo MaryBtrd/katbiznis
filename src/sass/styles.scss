@@ -6,13 +6,18 @@
 *started at "09/02/2017"
 
 */
-
+html{
+  box-sizing: border-box;
+}
+*, *:before, *:after{
+  box-sizing: inherit;
+}
 html {
   width: 100%;
   height: 100%;
   background: white url(../images/main-bcg.png) center repeat;
   font: normal 62.5%/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  color:black
+  color:black;
 
 }
 body{
@@ -24,6 +29,7 @@ body{
 
 main{
   width:90%;
+  max-width: 30rem;
 }
 section{
   min-height: 15rem;
@@ -84,9 +90,63 @@ dl{
     width: 65%;
     margin: 0;
     font-size: 1.4rem;
+    color: #333;
   }
 }
 
 nav{
   display: none;
+}
+
+@media screen and (min-width: 640px){
+  body{
+    perspective: 800px;
+  }
+  main{
+    position: relative;
+    min-height: 20rem;
+    transition: transform .25s ease-in-out;
+    &.flipped{
+      transform-style: preserve-3d;
+      transform:rotateY(180deg);
+    }
+  section{
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    &.back{
+      transform: rotateY(180deg);
+      }
+    }
+  }
+}
+nav{
+  display: block;
+  width: 90%;
+  max-width: 30rem;
+  margin: 1rem auto;
+  font-size: 1.4rem;
+  text-align: left;
+  a{
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    color:purple;
+    transition: color .125s ease-in-out;
+    svg{
+      height: 1.8rem;
+      margin-right: .5rem;
+      fill: purple;
+      transition: color .125s ease-in-out, transform .25s ease-in-out;
+
+    &:hover{
+      color:blue;
+      svg{
+        fill:blue;
+        transform: rotate(180deg);
+        }
+      }
+    }
+  }
 }
